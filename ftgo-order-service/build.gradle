@@ -20,8 +20,8 @@ apply plugin: 'spring-cloud-contract'
 apply plugin: 'docker-compose'
 apply plugin: 'com.google.protobuf'
 
-apply plugin: IntegrationTestsPlugin
-apply plugin: ComponentTestsPlugin
+//apply plugin: IntegrationTestsPlugin
+//apply plugin: ComponentTestsPlugin
 
 dependencyManagement {
     imports {
@@ -46,7 +46,7 @@ sourceSets {
 
 compileTestGroovy.enabled=false
 
-componentTest.dependsOn(assemble)
+//componentTest.dependsOn(assemble)
 
 
 dockerCompose {
@@ -71,9 +71,9 @@ dockerCompose {
 
 }
 
-integrationTest.dependsOn(integrationTestsComposeUp)
+//integrationTest.dependsOn(integrationTestsComposeUp)
 
-componentTest.dependsOn(componentTestsComposeUp)
+//componentTest.dependsOn(componentTestsComposeUp)
 
 
 protobuf {
@@ -161,9 +161,9 @@ dependencies {
 
     testCompile "io.eventuate.tram.sagas:eventuate-tram-sagas-testing-support:$eventuateTramSagasVersion"
 
-    componentTestCompile 'info.cukes:cucumber-java:1.2.5'
-    componentTestCompile 'info.cukes:cucumber-junit:1.2.5'
-    componentTestCompile 'info.cukes:cucumber-spring:1.2.5'
+//    componentTestCompile 'info.cukes:cucumber-java:1.2.5'
+//    componentTestCompile 'info.cukes:cucumber-junit:1.2.5'
+//    componentTestCompile 'info.cukes:cucumber-spring:1.2.5'
     testCompile project(":ftgo-test-util")
 
 }
